@@ -1,0 +1,13 @@
+$body-bg: mix($cyan, $gray-700, 5%);
+$body-font: 'Roboto Condensed', $font-family-sans-serif;
+
+$vw-viewport: 1920;
+$mobile-viewport: 320;
+@function calcFluidFontSize($f-min, $f-max) {
+  $k: ($f-max - $f-min)/($vw-viewport - $mobile-viewport);
+  $b: $f-min - $k * $mobile-viewport;
+  $b: $b * 1px;
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+
